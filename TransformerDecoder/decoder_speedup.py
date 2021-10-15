@@ -217,6 +217,8 @@ def do_predict(args):
         logger.info("Average test time for FasterDecoder decoder is %f ms" %
                     (end_2))
     print(ft_dec_output)
+    if args.use_fp16_decoder:
+        ft_dec_output = paddle.cast(ft_dec_output, dtype='float32')
     logger.info(
         f'max diff: {paddle.max(paddle.abs(ft_dec_output - pd_dec_output)).item()}'
     )
