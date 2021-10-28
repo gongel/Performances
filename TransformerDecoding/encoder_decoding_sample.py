@@ -119,7 +119,7 @@ def do_predict(args):
 
     with paddle.no_grad():
         for i in range(100):
-            # For warmup. 
+            # For warmup.
             if 50 == i:
                 paddle.device.cuda.synchronize()
                 start = time.time()
@@ -132,7 +132,7 @@ def do_predict(args):
             )
         else:
             logger.info(
-                f'DecodingResult2: FT: {not args.without_ft}, infer_batch_size: {args.infer_batch_size}, seq_len: {args.max_out_len}, beam_size: {args.beam_size}, time:{cost_time} ms/batch'
+                f'DecodingResult2: FT: {not args.without_ft}, beam_search_version: {args.beam_search_version}, infer_batch_size: {args.infer_batch_size}, seq_len: {args.max_out_len}, beam_size: {args.beam_size}, time:{cost_time} ms/batch'
             )
 
 
