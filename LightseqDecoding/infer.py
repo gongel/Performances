@@ -45,7 +45,7 @@ def test():
     torch.cuda.synchronize()
     end = (time.time() - start) / 50 * 1000
     print(
-        f"Result: FP16, batch_size= {batch_size} , max_length= {max_length} , beam_size= {beam_size} , time= {round(end, 6)} ms/batch"
+        f"LightseqResult: FP16, batch_size= {batch_size} , max_length= {max_length} , beam_size= {beam_size} , time= {round(end, 6)} ms/batch"
     )
     print(result)
 
