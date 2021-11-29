@@ -1,3 +1,5 @@
+for precision in fp16 fp32 ;
+do
 for infer_batch_size in 1 8 32 64 128 ;
 do
 for max_length in 32 64 128 ;
@@ -9,6 +11,7 @@ else
     echo "Using fp32"
     python3.7 encoder_decoder_speedup.py --infer_batch_size ${infer_batch_size} --max_length ${max_length}
 fi
+done
 done
 done
 done
